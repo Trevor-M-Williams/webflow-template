@@ -3,7 +3,7 @@ import { Fireworks } from 'fireworks-js'
 const quote = document.querySelector('.quote')
 setTimeout(() => {
   quote.style.opacity = 1
-}, 500)
+}, 0)
 
 const ben = document.querySelector('.ben')
 setTimeout(() => {
