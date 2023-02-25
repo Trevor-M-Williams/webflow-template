@@ -3,16 +3,21 @@ import { Fireworks } from 'fireworks-js'
 const quote = document.querySelector('.quote')
 setTimeout(() => {
   quote.style.opacity = 1
-}, 250)
+}, 500)
+
+const ben = document.querySelector('.ben')
+setTimeout(() => {
+  ben.style.opacity = 1
+}, 1000)
 
 setTimeout(() => {
   quote.style.transform = 'translateY(0)'
-}, 1500)
+}, 2000)
 
 const keypad = document.querySelector('.keypad')
 setTimeout(() => {
   keypad.style.opacity = 1
-}, 2500)
+}, 3000)
 
 const keys = document.querySelectorAll('.key')
 keys.forEach((key) => {
