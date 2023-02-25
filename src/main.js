@@ -1,5 +1,19 @@
 import { Fireworks } from 'fireworks-js'
 
+const quote = document.querySelector('.quote')
+setTimeout(() => {
+  quote.style.opacity = 1
+}, 250)
+
+setTimeout(() => {
+  quote.style.transform = 'translateY(0)'
+}, 1500)
+
+const keypad = document.querySelector('.keypad')
+setTimeout(() => {
+  keypad.style.opacity = 1
+}, 2500)
+
 const keys = document.querySelectorAll('.key')
 keys.forEach((key) => {
   if (key.classList.contains('green')) return
@@ -24,7 +38,6 @@ function handleClick(e) {
 }
 
 function handleClear() {
-  const display = document.querySelector('.display')
   display.textContent = ''
 }
 
@@ -52,7 +65,6 @@ function handleEnter() {
 }
 
 function handleSubmit() {
-  const display = document.querySelector('.display')
   const code = display.textContent
   if (code.length !== 4) return
   const isValid = validateCode(code)
@@ -144,10 +156,11 @@ function startFireworks() {
 }
 
 function validateCode(code) {
-  // get current time in military format MST
   const date = new Date()
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
+  let hours = date.getHours()
+  let minutes = date.getMinutes()
+  if (hours < 10) hours = '0' + hours
+  if (minutes < 10) minutes = '0' + minutes
   const time = `${hours}${minutes}`
   return time === code
 }
